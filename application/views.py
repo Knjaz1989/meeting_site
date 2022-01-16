@@ -14,3 +14,9 @@ class UserListViewSet(ModelViewSet):
     filter_backends = (DjangoFilterBackend,)
     filterset_fields = ['gender', 'first_name', 'last_name']
     http_method_names = ['get']
+
+
+class UserCreateViewSet(ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserListSerializer
+    http_method_names = ['post']

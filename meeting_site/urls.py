@@ -18,10 +18,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from rest_framework.routers import DefaultRouter
-from application.views import UserListViewSet
+from application.views import UserListViewSet, UserCreateViewSet
 
 router = DefaultRouter()
 router.register('api/list', UserListViewSet)
+router.register('api/clients/create', UserCreateViewSet)
 
 
 urlpatterns = [
